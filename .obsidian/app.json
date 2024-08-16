@@ -1,3 +1,15 @@
 {
-  "promptDelete": false
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "livePreview": false,
+  "showLineNumber": false,
+  "rightToLeft": false,
+  "attachmentFolderPath": "./material",
+  "newFileLocation": "current",
+  "useMarkdownLinks": false,
+  "readableLineLength": false,
+  "strictLineBreaks": false,
+  "foldIndent": true,
+  "showIndentGuide": true,
+  "vimMode": false
 }

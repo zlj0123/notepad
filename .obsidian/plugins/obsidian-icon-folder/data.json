@@ -6,6 +6,9 @@
     "emojiStyle": "native",
     "iconColor": "#c51b1b",
     "recentlyUsedIcons": [
+      "SiSvg",
+      "🖼",
+      "LiFolder",
       "SiApacheflink"
     ],
     "recentlyUsedIconsSize": 5,
@@ -29,5 +32,19 @@
     "lucideIconPackType": "native",
     "debugMode": false
   },
-  "Tech/Flink.md": "SiApacheflink"
+  "Daily": "LiFolder",
+  "Fin": "LiFolder",
+  "Tech": "LiFolder",
+  "Travel": "LiFolder",
+  "Tech/Flink/Flink.md": "SiApacheflink",
+  "Tech/Flink": "LiFolder",
+  "Job": "LiFolder",
+  "Tech/Flink/material/tasks_slots.svg": "SiSvg",
+  "Tech/Flink/material/tasks_chains.svg": "SiSvg",
+  "Tech/Flink/material/slot_sharing.svg": "SiSvg",
+  "Tech/Flink/material/processes.svg": "SiSvg",
+  "Tech/Flink/material/parallel_streams_watermarks.svg": "SiSvg",
+  "Tech/Flink/material/levels_of_abstraction.svg": "SiSvg",
+  "Tech/Flink/material/event_processing_time.svg": "SiSvg",
+  "Tech/Flink/material/checkpoints.svg": "SiSvg"
 }

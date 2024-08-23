@@ -11,5 +11,7 @@
   "strictLineBreaks": false,
   "foldIndent": true,
   "showIndentGuide": true,
-  "vimMode": false
+  "vimMode": false,
+  "showInlineTitle": true,
+  "showRibbon": true
 }

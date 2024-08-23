@@ -46,5 +46,7 @@
   "Tech/Flink/material/parallel_streams_watermarks.svg": "SiSvg",
   "Tech/Flink/material/levels_of_abstraction.svg": "SiSvg",
   "Tech/Flink/material/event_processing_time.svg": "SiSvg",
-  "Tech/Flink/material/checkpoints.svg": "SiSvg"
+  "Tech/Flink/material/checkpoints.svg": "SiSvg",
+  "Job/Hundsun.md": "LiFolder",
+  "Daily/Daily.md": "LiFolder"
 }

@@ -81,14 +81,21 @@ CheckPoint执行过程
 | 由 Flink 的 JobManager 定时自动触发并管理 | 由用户手动触发并管理 |
 | 主要用于任务发生故障时，为任务提供给自动恢复机制 | 主要用户升级 Flink 版本、修改任务的逻辑代码、调整算子的并行度，且必须手动恢复 |
 | Flink 任务停止后，Checkpoint 的状态快照信息默认被清除 | 一旦触发 Savepoint，状态信息就被持久化到外部存储，除非用户手动删除 |
-| Checkpoint 设计目标：轻量级且尽可能快地恢复任务 | Savepoint 的生成和恢复成本会更高一些，Savepoint 更多地关注代码的可移植性和兼容任务的更改操作 |
+| Checkpoint 设计目标：轻量级且尽可能快地恢复任务 | Savepoint 的生成和恢复成本会更高一些，Savepoint 更多地关注代码的可移植性和兼容任务的更改操作 |[[]]
 
 ``` java
 StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-env.enableCheckpointing(1000);
+//设置Checkpoint的执行时间间隔，单位为ms，当前配置代表每1min执行一次Checkpoint
+env.enableCheckpointing(60000);
+//设置快照持久化存储地址，当前配置代表将快照存储到HDFS的hdfs:///my/checkpoint/dir目录中
+env.getCheckpointConfig().setCheckpointStorage("hdfs:///my/checkpoint/dir");
+//设置Checkpoint的一致性语义，当前配置代表语义为精确一次
 env.getCheckpointConfig().setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
-env.getCheckpointConfig().setMinPauseBetweenCheckpoints(500);
+//设置Checkpoint的超时时间，单位为ms，如果执行超时，则认为执行Checkpoint失败。
 env.getCheckpointConfig().setCheckpointTimeout(60000);
+//连续两次Checkpoint执行的最小间隔时间，单位为ms。
+env.getCheckpointConfig().setMinPauseBetweenCheckpoints(5000);
+//设置作业同时执行Checkpoint的数目，当前配置表示作业同一时间只允许执行一个Checkpoint
 env.getCheckpointConfig().setMaxConcurrentCheckpoints(1);
 env.getCheckpointConfig().enableExternalizedCheckpoints(ExternalizedCheckpointCleanup.RETAIN_ON_CANCELLATION);
 ```
@@ -324,3 +331,5 @@ stream
 [.sideOutputLateData(...)] <- 可选项："output tag" (else no side output for late data)
 .reduce/aggregate/apply() <- 必填项："function"
 [.getSideOutput(...)] <- 可选项："output tag"
+
+## 源码研读

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1922ab91ae188ffc",
+        "id": "4820f182df4fef87",
         "type": "tabs",
         "children": [
           {
-            "id": "a3ad72fdb1acf377",
+            "id": "11d9f1b8e6456a6e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,6 +32,7 @@
       {
         "id": "4f614b84913d907d",
         "type": "tabs",
+        "dimension": 62.86811779769527,
         "children": [
           {
             "id": "1f565cc3973825cf",
@@ -71,6 +72,7 @@
       {
         "id": "062a911f24bf94f5",
         "type": "tabs",
+        "dimension": 37.13188220230474,
         "children": [
           {
             "id": "311a07e1de934707",
@@ -149,7 +151,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 221.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -165,12 +167,12 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "a3ad72fdb1acf377",
+  "active": "11d9f1b8e6456a6e",
   "lastOpenFiles": [
+    "Job/Hundsun.md",
+    "Daily/Daily.md",
     "Tech/Flink/Flink.md",
     "2024-08-27.md",
-    "Daily/Daily.md",
-    "Job/Hundsun.md",
     "Tech/Flink/material/checkpoints.svg",
     "Tech/Flink/material",
     "Tech/Flink/content/checkpoints.svg",

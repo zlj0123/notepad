@@ -6,6 +6,7 @@
     "emojiStyle": "native",
     "iconColor": "#d80ea2",
     "recentlyUsedIcons": [
+      "SiHtml5",
       "SiSvg",
       "🖼",
       "LiFolder",
@@ -48,5 +49,8 @@
   "Tech/Flink/material/event_processing_time.svg": "SiSvg",
   "Tech/Flink/material/checkpoints.svg": "SiSvg",
   "Job/Hundsun.md": "LiFolder",
-  "Daily/Daily.md": "LiFolder"
+  "Daily/Daily.md": "LiFolder",
+  "Tech/HtmlCssJS/HTMLCSSJS.md": "SiHtml5",
+  "Job/GaussDB和GaussDB(DWS)问题.md": "LiFolder",
+  "Job/GaussDB(DWS)数据库缺陷.md": "LiFolder"
 }

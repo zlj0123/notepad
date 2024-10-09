@@ -13,6 +13,32 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Job/Hundsun.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "3f6bff107993e0e8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Job/GaussDB和GaussDB(DWS)问题.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "5e6f4eff135ea45b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Daily/Daily.md",
                 "mode": "source",
                 "backlinks": false,
@@ -20,7 +46,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -86,7 +113,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 264.5
+    "width": 349.5
   },
   "right": {
     "id": "ccb2533562e89a63",
@@ -126,7 +153,17 @@
             }
           },
           {
-            "id": "bd181e3e0d55571c",
+            "id": "6d8cbbd91299deb9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Daily/Daily.md"
+              }
+            }
+          },
+          {
+            "id": "2fa4e1064102baab",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -137,21 +174,19 @@
             }
           },
           {
-            "id": "dddd83ddbc9f926e",
+            "id": "136cb57b0be725a5",
             "type": "leaf",
             "state": {
-              "type": "outline",
-              "state": {
-                "file": "Daily/Daily.md"
-              }
+              "type": "advanced-tables-toolbar",
+              "state": {}
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 221.5
+    "width": 276.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,25 +202,32 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "11d9f1b8e6456a6e",
+  "active": "5e6f4eff135ea45b",
   "lastOpenFiles": [
+    "Job/GaussDB(DWS)数据库缺陷.md",
+    "Job/material/Pasted image 20240927160621.png",
+    "Job/material/Pasted image 20240927133353.png",
+    "Job/material/Pasted image 20240927133313.png",
+    "Job/material/Pasted image 20240927133241.png",
+    "Job/material/Pasted image 20240927132759.png",
+    "Job/material/Pasted image 20240927132204.png",
+    "Job/material/Pasted image 20240927131825.png",
+    "Job/material/GuassDBDWSTest.java",
+    "Job/GaussDB和GaussDB(DWS)问题.md",
     "Job/Hundsun.md",
     "Daily/Daily.md",
+    "Job/material/0FF1D777-5D61-49a8-8366-0F3BD5C9EDC0.png",
+    "Job/material/AE9C5BBB-1CDD-4056-ACE2-6B44CDF4A56E 1.png",
+    "Job/material/AE9C5BBB-1CDD-4056-ACE2-6B44CDF4A56E.png",
+    "Job/material",
     "Tech/Flink/Flink.md",
+    "Tech/HtmlCssJS/HTMLCSSJS.md",
+    "Tech/HtmlCssJS/material",
+    "Tech/HtmlCssJS",
     "2024-08-27.md",
-    "Tech/Flink/material/checkpoints.svg",
     "Tech/Flink/material",
-    "Tech/Flink/content/checkpoints.svg",
     "Tech/Flink/content",
     "Job",
-    "Tech/Flink/material/parallel_streams_watermarks.svg",
-    "Tech/Flink/material/tasks_slots.svg",
-    "Tech/Flink/material/slot_sharing.svg",
-    "Tech/Flink/material/tasks_chains.svg",
-    "Tech/Flink/material/processes.svg",
-    "Tech/Flink/material/levels_of_abstraction.svg",
-    "Tech/Flink/material/event_processing_time.svg",
-    "Tech/Flink/levelsofabstraction.png",
     "Tech/Flink",
     "2024-08-13.md",
     "未命名看板.md",
@@ -193,8 +235,6 @@
     "Daily",
     "Tech.md",
     "Travel",
-    "Fin",
-    "Tech",
     "未命名.canvas",
     "未命名看板 2.md",
     "未命名看板 1.md"

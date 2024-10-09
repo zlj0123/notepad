@@ -33,7 +33,14 @@ MAVEN 坐标：
 <groupId>com.huawei.gaussdb</groupId>
 <artifactId>gaussdbjdbc</artifactId>
 <version>5.0.0-htrunk4.csi.gaussdb_kernel.opengaussjdbc.r2</version>
-  
+
+<dependency>  
+<groupId>com.huawei.gaussdb</groupId>  
+<artifactId>gaussdbjdbc</artifactId>  
+<version>5.0.0-htrunk4.csi.gaussdb_kernel.opengaussjdbc.r2_20240920</version>  
+</dependency>
+
+
 openGauss:
 jdbc 驱动名：org.postgresql.Driver
 JDBC URL: jdbc:opengauss
@@ -43,10 +50,10 @@ maven 坐标：
 <version>5.1.0</version>
 ```
 
-目前DataGo对GaussDB的支持，已经支持的有2套，即将新开发一套：
-1. 驱动com.huawei.gauss200.jdbc.Driver 搭配 jdbc:gaussdb://ip:port/dbname的url (这个是很早的gauss版本)
-2. 驱动com.huawei.opengauss.jdbc.Driver 搭配 jdbc:opengauss://ip:port/dbname的url (已经支持)
-3. 驱动com.huawei.gaussdb.jdbc.Driver 搭配 jdbc:gaussdb://ip:port/dbname的url (最新的gauss版本，即将支持)
+目前DataGo对GaussDB的支持如下：
+1. 驱动com.huawei.gauss200.jdbc.Driver 搭配 jdbc:gaussdb://ip:port/dbname的url (这个是很早的GaussDB版本，目前不用了，目前这个给GaussDB(DWS)使用了)
+2. 驱动com.huawei.opengauss.jdbc.Driver 搭配 jdbc:opengauss://ip:port/dbname的url (已经支持，但官网好像没有推荐用这个)
+3. 驱动com.huawei.gaussdb.jdbc.Driver 搭配 jdbc:gaussdb://ip:port/dbname的url (使用最新的GaussDB驱动，官网推荐这个)
 
 ### 测试环境
 10.20.194.39:8000/uf30

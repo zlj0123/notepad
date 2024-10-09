@@ -13,5 +13,12 @@
   "showIndentGuide": true,
   "vimMode": false,
   "showInlineTitle": true,
-  "showRibbon": true
+  "showRibbon": true,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }

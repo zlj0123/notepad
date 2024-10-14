@@ -52,5 +52,6 @@
   "Daily/Daily.md": "LiFolder",
   "Tech/HtmlCssJS/HTMLCSSJS.md": "SiHtml5",
   "Job/GaussDB和GaussDB(DWS)问题.md": "LiFolder",
-  "Job/GaussDB(DWS)数据库缺陷.md": "LiFolder"
+  "Job/GaussDB(DWS)数据库缺陷.md": "LiFolder",
+  "Job/DataGo离线同步支持自定义函数(Transformer)开发&部署&使用规范.md": "LiFolder"
 }

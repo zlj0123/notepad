@@ -1,4 +1,4 @@
-## vpn代理排除
+## 1 vpn代理排除
 ```
   - DOMAIN-SUFFIX,hundsun.com,DIRECT
   - DOMAIN-SUFFIX,aliyun.com,DIRECT
@@ -8,7 +8,7 @@
   - DOMAIN-SUFFIX,opengauss.org,DIRECT
 ```
 
-## 视力
+## 2 视力
 
 右: 400度 + 150度散光， 轴位93
 左: 550度 + 50度散光，轴位105

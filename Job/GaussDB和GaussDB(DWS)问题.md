@@ -1,5 +1,5 @@
 
-## 基本信息
+## 1 基本信息
 
 GaussDB数据库和GaussDB(DWS)数据仓库是两个不同的产品，他们官网里使用的JDBC也不一样，GaussDB是用com.huawei.gaussdb.jdbc.Driver，GaussDB(DWS)是用com.huawei.gauss200.jdbc.Driver，url前缀都是jdbc:gaussdb://开头，上面是基本信息。
 
@@ -10,13 +10,13 @@ GaussDB(DWS) JDBC驱动：
 ![[0FF1D777-5D61-49a8-8366-0F3BD5C9EDC0.png]]
 
 
-## 我们组件现状
-### 数据源：
+## 2 我们组件现状
+### 2.1 数据源：
 1. 数据源以前支持GaussDB，但底层使用的是com.huawei.gauss200.jdbc.Driver的驱动，这个应该不对，但目前也没发现问题，建议这个版本不动，需不需要升级和改动，需架构评估。 
 2. 数据源部署库支持GaussDB，上个版本使用了com.huawei.opengauss.jdbc.Driver驱动，这个也不对，这个月版本会改回来，这个已经在开发了。
 3. 这个月需求里，数据源需要支持GaussDB(DWS)，部署库也需要支持GaussDB(DWS)，会用GaussDB(DWS)的驱动。
 
-### 离线同步
+### 2.2 离线同步
 1. 离线同步很早的时候，2021年2月份支持了GaussDB，但里面驱动使用的是com.huawei.gauss200.jdbc.Driver的驱动，这个不对，但这个同步前几年基本没人使用。
 2. 上个月离线同步支持了GaussDB，使用的是com.huawei.opengauss.jdbc.Driver（这个也是客户提供的驱动）。
 3. 这个月客户又提了需求支持GaussDB，但使用com.huawei.gaussdb.jdbc.Driver，这个月发版。
@@ -33,7 +33,7 @@ GaussDB(DWS) JDBC驱动：
 | GuassDB(DWS)|   不支持  |  com.huawei.gauss200.jdbc.Driver  |
 
 
-### 最终结论
+### 2.3 最终结论
 近跟产品(陈海云)沟通，需要统一处理，最终的处理方案如下：
 
 common-driver包里：

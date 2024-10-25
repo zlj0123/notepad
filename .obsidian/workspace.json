@@ -8,59 +8,19 @@
         "type": "tabs",
         "children": [
           {
-            "id": "11d9f1b8e6456a6e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Job/Hundsun.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": true
-              }
-            }
-          },
-          {
             "id": "3f6bff107993e0e8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Job/GaussDB和GaussDB(DWS)问题.md",
+                "file": "Daily/Daily.md",
                 "mode": "source",
                 "backlinks": false,
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "5e6f4eff135ea45b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Job/Hundsun.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "32137502571bd72c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Job/DataGo离线同步支持自定义函数(Transformer)开发&部署&使用规范.md",
-                "mode": "source",
-                "backlinks": true,
                 "source": true
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -126,7 +86,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 349.5
+    "width": 329.5
   },
   "right": {
     "id": "ccb2533562e89a63",
@@ -142,7 +102,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Job/DataGo离线同步支持自定义函数(Transformer)开发&部署&使用规范.md",
+                "file": "Daily/Daily.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -159,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Job/DataGo离线同步支持自定义函数(Transformer)开发&部署&使用规范.md",
+                "file": "Daily/Daily.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Job/DataGo离线同步支持自定义函数(Transformer)开发&部署&使用规范.md"
+                "file": "Daily/Daily.md"
               }
             }
           },
@@ -199,7 +159,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 390.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -215,15 +175,16 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "32137502571bd72c",
+  "active": "3f6bff107993e0e8",
   "lastOpenFiles": [
+    "Job/DataGo离线同步支持自定义函数(Transformer)开发&部署&使用规范.md",
+    "Job/Hundsun.md",
+    "Daily/Daily.md",
+    "Job/GaussDB和GaussDB(DWS)问题.md",
+    "Job/GaussDB(DWS)数据库缺陷.md",
     "Job/material/datax-transformer-demo.zip",
     "Job/material/Pasted image 20241014141211.png",
     "Job/material/Pasted image 20241014140259.png",
-    "Daily/Daily.md",
-    "Job/DataGo离线同步支持自定义函数(Transformer)开发&部署&使用规范.md",
-    "Job/Hundsun.md",
-    "Job/GaussDB(DWS)数据库缺陷.md",
     "Job/material/Pasted image 20240927160621.png",
     "Job/material/Pasted image 20240927133353.png",
     "Job/material/Pasted image 20240927133313.png",
@@ -232,7 +193,6 @@
     "Job/material/Pasted image 20240927132204.png",
     "Job/material/Pasted image 20240927131825.png",
     "Job/material/GuassDBDWSTest.java",
-    "Job/GaussDB和GaussDB(DWS)问题.md",
     "Job/material/0FF1D777-5D61-49a8-8366-0F3BD5C9EDC0.png",
     "Job/material",
     "Tech/Flink/Flink.md",
@@ -249,7 +209,6 @@
     "README.md",
     "Daily",
     "Tech.md",
-    "Travel",
     "未命名.canvas",
     "未命名看板 2.md",
     "未命名看板 1.md"

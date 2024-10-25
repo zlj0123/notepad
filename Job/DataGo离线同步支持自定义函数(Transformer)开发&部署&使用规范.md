@@ -5,8 +5,8 @@
 
 demo很简单，把你配置的某个字段的值，替换成你配置的值，我们会标出一些步骤和需要注意的点，然后会附上整个demo。
 ### 1.1 pom.xml文件定义
-* 必须要引入datax-common和datax-trnsformer依赖，demo里我们直接放到工程的libs里了，让你拿来就可以运行和上手。实际开发里你可以放在maven仓库里，然后引入，但是scope为provided，不需要打包进最后的发布包。
-* 需要引入slf4j-api、logback-classic依赖，datax里用这个作为log输入记录。
+* 必须要引入datax-common和datax-transformer依赖，demo里我们直接放到工程的libs里了，让你拿来就可以运行和上手。实际开发里你可以放在maven仓库里，然后引入，但是scope为provided，不需要打包到最终的发布包里。
+* 需要引入slf4j-api、logback-classic依赖，datax里用这个作为log记录。
 * 其他你自己实现自定义函数用到的依赖，比如加解密工具。
 ```
 <dependencies>
@@ -137,17 +137,133 @@ XxxColumn是DataX内部定义的抽象Column，根据需要选择相应的Column
 ### 2.2 DataGo部署
 DataGo层都是通过see部署，然后有个see配置项，要求输入Transformer插件部署目录的绝对路径，上面就是/xxx/xxx/.../hundsun_transformer；当然，你没有transformer插件，你就空着，你的任务里也不能配置Transformer。
 然后DataGo部署的时候，会建立一个链接，链接到这个目录下面
-ln -s /xxx/xxx/.../hundsun_transformer /DataGo安装路径/bdata-datago/DataX/local_storage/transformer
+ln -sf /xxx/xxx/.../hundsun_transformer /DataGo安装路径/bdata-datago/DataX/local_storage/transformer
 
 我们通过建立软链接的方式调用你们的Transformer插件。
 
 ## 3 使用规范
 
 ### 3.1 DataX任务穿透
+这里任务穿透是指直接通过调用DataX任务，不是DataGo任务，就是直接定义一个DataX任务的json文件，然后直接通过调用DataX启动离线同步任务。这里更多用在下面的场景里：业务部门开发了很多高度定制的DataX读写插件，然后结合研发中心已有的DataX通用插件，这样配置离线同步任务时，通过穿透直接调用。
+这时，你的任务定义完全参照DataX官网定义。包括reader、transformer和writer这些。下面是模板，仅供参考
 
+```
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "xxxreader",
+                    "parameter": {
+                    }
+                },
+                "writer": {
+                    "name": "xxxwriter",
+                    "parameter": {            
+                       }
+                },
+                "transformer": [
+                    {
+                        "name": "hundsun_demo",
+                        "parameter":
+                            {
+                            "columnIndex":11,
+                            "paras":["hundsun transformer demo"]
+                            }
+                    }
+                ]
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": "5"
+            },
+             "errorLimit": {
+                "record": 0
+            }
+        }
+    }
+}
+```
+
+DataGo组件层不支持直接穿透，数据开发平台支持，他是通过调用DataGo Api，Api层直接去调用DataX启动离线同步任务，等于穿透了DataGo层。
 
 ### 3.2 DataGo组件
+如果直接使用DataGo组件，有如下两种方式：
+
+#### 3.2.1 任务定义在dg_job表里
+dg_job表里有字段c_transformer_cfg字段，用来存储任务的transformer配置，值是个json数组，比如下面配置：
+```
+[
+    {
+        "name": "hundsun_demo",
+        "parameter":
+            {
+            "columnIndex":11,
+            "paras":["hundsun transformer demo"]
+            }
+    },
+    {
+        "name": "hundsun_demo2",
+        "parameter":
+            {
+            "columnIndex":5,
+            "paras":["abdsfsdgfs"]
+            }
+    }
+]
+```
+
+1. 用户可以直接配置columnIndex，这样我们不会去改动值，会直接传递到datax层，推荐这个。
+2. 用户可以配置srcColumn和destColumn，值是映射column的值，这个配置需要搭配mappings字段，我们根据srcColumn和destColumn在mappings字段里的顺序，获取传递到columnIndex的值。
+```
+[
+    {
+        "name": "hundsun_demo",
+        "parameter":
+            {
+            "columnIndex":11,
+            "paras":["hundsun transformer demo"]
+            }
+    },
+    {
+        "name": "hundsun_demo2",
+        "parameter":
+            {
+            "srcColumn":"column1",
+            "destColumn":"column1",
+            "paras":["abdsfsdgfs"]
+            }
+    }
+]
+```
+
+
+#### 3.2.2 任务定义在json文件里
+DataGo任务定义在json文件里，跟上面保存在dg_job里，其实本质是一样的，只是把上面的value内容放到transformer这里key里。
+```
+"transformer" : [
+    {
+        "name": "hundsun_demo",
+        "parameter":
+            {
+            "columnIndex":11,
+            "paras":["hundsun transformer demo"]
+            }
+    },
+    {
+        "name": "hundsun_demo2",
+        "parameter":
+            {
+            "srcColumn":"column1",
+            "destColumn":"column1",
+            "paras":["abdsfsdgfs"]
+            }
+    }
+]
+```
 
 
 ### 3.3 大数据开发平台
 
+大数据开发平台通过可视化配置离线同步作业，然后通过Api发送到DataGo组件，这种方式都是以任务定义在json文件里的形式执行的，transformer都是srcColumn和destColumn的形式发送到DataGo组件的。

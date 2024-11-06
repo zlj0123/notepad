@@ -10,13 +10,19 @@ HBase 写入，需开通端口：Zookeeper：2181
 HBase RegionServer： 60020
 HBase Master： 60000
 
-### 1.2 DataGo升级
+### 1.2 DataX
+
+assembly:assembly 是 maven-assembly-plugin 2.x 的编译目标，3.x 版本没有这个，取而代之的是 assembly:single。
+
+而 package.xml 中的 id 属性，在 2.2 的正式版本后，就成了必填项了，不能为空值，所以，你应该使用 maven-plugin-plugin-2.2 的 Beta 或 RC 版本，比如 2.2-beta-5。为何不使用 2.1 版本，是因为 datax 在 package.xml 中，使用了一个只能在 2.2 或更高的版本中才能识别的属性 useProjectArtifact。
+
+### 1.3 DataGo升级
 
 DataGo升级注意点：
 1. BDATA1.0-DataGoDeploy-V202101.00.006(包含) ~ BDATA1.0-DataGoDeploy-V202101.00.016(包含)，如果是querySql语句，我们会自动在外面罩一层，实际执行变成select * from (你们自己的sql语句) t，但这样改，如果你们自己的sql语句涉及大表查询，就会很慢，所以BDATA1.0-DataGoDeploy-V202101.00.017版本里，我们把罩一层去掉了，这样如果你们的sql里有union all、left join等情况，需要你们自己在sql语句外面罩一层，写成select xx1,xx2,xx3 (你们原先的sql) t（Log里有SqlParser错误）。
 2. ART1.0-DataGoDeploy-V202101-11-002.zip版本里把mysql驱动升级到到了mysql8，执行的过程中有可能会报SQLException: HOUR_OF_DAY: 2 -> 3问题，需要你们在同步的url里面加上&serverTimezone=Asia/Shanghai配置。
 
-### 1.3 GaussDB驱动
+### 1.4 GaussDB驱动
 ```
 GaussDB 旧版本:
 jdbc 驱动名：com.huawei.opengauss.jdbc.Driver
@@ -71,12 +77,12 @@ maven 坐标：
 DataGoApi层会把type为gauss的映射到上面3，type为gaussdws的映射为上面的1。2只有组件层面支持。
 
 
-### 1.4 测试环境
+### 1.5 测试环境
 10.20.194.39:8000/uf30
 hs_fil/UF30.hundsun
 
 
-### 1.5 mogdb
+### 1.6 mogdb
 className为io.mogdb.Driver，URL为 jdbc:mogdb://192.168.86.218:26000/
 mogdb/mogdb@123
 <dependency>
